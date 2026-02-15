@@ -6,7 +6,7 @@
   "default_title": "Session Runner",
   "default_popup": "src/runner/index.html"
 },
- "permissions": ["storage", "alarms", "tabs", "notifications", "scripting"],
+"permissions": ["storage", "alarms", "scripting", "notifications", "tabs"],
 "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js",
