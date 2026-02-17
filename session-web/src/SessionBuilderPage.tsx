@@ -27,8 +27,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
-
-const EXTENSION_ID = "pbbagmcnmgjfhojigmakkdlmoalkehnn";
+import { EXTENSION_ID } from "./config";
 
 /** ===== Types (shared contract with extension) ===== */
 export type BlockType = "work" | "break" | "dynamic";

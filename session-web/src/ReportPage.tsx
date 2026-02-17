@@ -11,8 +11,7 @@ import {
 } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Link as RouterLink } from "react-router-dom";
-
-const EXTENSION_ID = "pbbagmcnmgjfhojigmakkdlmoalkehnn";
+import { EXTENSION_ID } from "./config";
 
 function runIdFromUrl(): string | null {
   const url = new URL(window.location.href);

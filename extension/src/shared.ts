@@ -1,5 +1,6 @@
 export type BlockType = "work" | "break" | "dynamic";
 
+export const EXTENSION_ID = "pbbagmcnmgjfhojigmakkdlmoalkehnn";
 export const DEFAULT_APP_ORIGIN = "http://localhost:5173";
 
 

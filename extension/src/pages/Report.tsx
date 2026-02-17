@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const EXTENSION_ID = "pbbagmcnmgjfhojigmakkdlmoalkehnn";
+import { EXTENSION_ID } from "../shared";
 
 export default function Report() {
   const [report, setReport] = useState<any>(null);
