@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const EXTENSION_ID = "npcalcjeddkbmpoghdcnibajlkcbnmnh";
+const EXTENSION_ID = "pbbagmcnmgjfhojigmakkdlmoalkehnn";
 
 export default function Report() {
   const [report, setReport] = useState<any>(null);

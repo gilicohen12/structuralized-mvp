@@ -10,6 +10,7 @@ Both must be running.
 ---
 
 ## 1) Start the Website
+
 cd session-web
 
 npm install
@@ -19,6 +20,7 @@ npm run dev
 open -> http://localhost:5173
 
 ## 2) Build the Extension
+
 cd extension
 
 npm install
@@ -26,6 +28,7 @@ npm install
 npm run build
 
 ## 3) Load extension into Chrome
+
 Open:
 chrome://extensions
 
@@ -47,4 +50,5 @@ const EXTENSION_ID = "PASTE_ID_HERE";
 
 **Extension:**
 cd extension
+
 npm run build
