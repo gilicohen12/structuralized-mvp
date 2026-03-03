@@ -337,7 +337,7 @@ export default function App() {
                     />
                     <Typography
                       variant="subtitle2"
-                      sx={{ fontWeight: 750, ml: 0.5 }}
+                      sx={{ fontWeight: 600, ml: 0.2 }}
                     >
                       {b.type === "work"
                         ? b.topic?.trim()
@@ -345,7 +345,7 @@ export default function App() {
                           : "Untitled work"
                         : b.type === "break"
                           ? "Recovery"
-                          : "Decide at runtime"}
+                          : "The topic is decided when the block actually starts"}
                     </Typography>
 
                     <Stack direction="row" spacing={0.5} sx={{ ml: "auto" }}>

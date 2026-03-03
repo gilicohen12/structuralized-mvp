@@ -89,7 +89,7 @@ function renderFeedbackModal(
   nextTitle: string,
   nextNeedsTopic: boolean,
   isFinal: boolean,
-  runId: string
+  runId: string,
 ) {
   clearOverlay();
 
@@ -100,7 +100,8 @@ function renderFeedbackModal(
   root.innerHTML = "";
 
   const backdrop = document.createElement("div");
-  backdrop.style.cssText = "position:absolute;inset:0;background:rgba(0,0,0,0.45);";
+  backdrop.style.cssText =
+    "position:absolute;inset:0;background:rgba(0,0,0,0.45);";
 
   const panel = document.createElement("div");
   panel.style.cssText =
@@ -124,7 +125,8 @@ function renderFeedbackModal(
 
   // error label (instead of silently returning)
   const error = document.createElement("div");
-  error.style.cssText = "margin-top:10px;color:#b00020;font-size:13px;display:none;";
+  error.style.cssText =
+    "margin-top:10px;color:#b00020;font-size:13px;display:none;";
   error.textContent = "";
   const setError = (msg: string) => {
     error.textContent = msg;
@@ -134,7 +136,8 @@ function renderFeedbackModal(
   // Reflection section (hidden for start prompt)
   const reflection = document.createElement("textarea");
   reflection.rows = 4;
-  reflection.placeholder = "How did that block go? (wins, friction, what to change)";
+  reflection.placeholder =
+    "Describe the main things you actually did in practice during this block, briefly explain: which of the goals you achieved for this block? or what distracted you?";
   reflection.style.cssText =
     "width:100%;border-radius:12px;border:1px solid rgba(0,0,0,0.2);padding:10px;font-size:14px;resize:vertical;";
 
@@ -151,7 +154,7 @@ function renderFeedbackModal(
 
   // ✅ If start prompt: always show topic input (because we only trigger this for dynamic-first)
   // ✅ If between blocks: show topic input only if nextNeedsTopic
-  const shouldAskTopic = isStartPrompt ? true : (!isFinal && nextNeedsTopic);
+  const shouldAskTopic = isStartPrompt ? true : !isFinal && nextNeedsTopic;
 
   if (shouldAskTopic) {
     const label = document.createElement("div");
@@ -173,7 +176,8 @@ function renderFeedbackModal(
   panel.appendChild(error);
 
   const row = document.createElement("div");
-  row.style.cssText = "display:flex;gap:10px;justify-content:flex-end;margin-top:14px;";
+  row.style.cssText =
+    "display:flex;gap:10px;justify-content:flex-end;margin-top:14px;";
 
   const cancel = document.createElement("button");
   cancel.textContent = "Not now";
@@ -182,7 +186,11 @@ function renderFeedbackModal(
   cancel.onclick = () => closeModal();
 
   const submit = document.createElement("button");
-  submit.textContent = isStartPrompt ? "Start" : isFinal ? "Complete" : "Continue";
+  submit.textContent = isStartPrompt
+    ? "Start"
+    : isFinal
+      ? "Complete"
+      : "Continue";
   submit.style.cssText =
     "padding:10px 12px;border-radius:12px;border:1px solid rgba(0,0,0,0.2);background:#111;color:white;cursor:pointer;font-weight:800;";
 
@@ -221,7 +229,10 @@ function renderFeedbackModal(
 
     // ✅ final -> open report
     if (isFinal) {
-      await chrome.runtime.sendMessage({ type: "OPEN_REPORT", payload: { runId } });
+      await chrome.runtime.sendMessage({
+        type: "OPEN_REPORT",
+        payload: { runId },
+      });
     }
 
     closeModal();
@@ -252,7 +263,7 @@ chrome.runtime.onMessage.addListener((msg: Msg) => {
       msg.payload.nextTitle,
       msg.payload.nextNeedsTopic,
       msg.payload.isFinal,
-      msg.payload.runId
+      msg.payload.runId,
     );
     return;
   }
