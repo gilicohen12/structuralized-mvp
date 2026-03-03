@@ -38,15 +38,7 @@ Click Load unpacked and select:
 
 extension/dist
 
-## 4) Add Extension ID to the Website
-
-Edit:
-
-session-web/src/App.tsx
-
-const EXTENSION_ID = "PASTE_ID_HERE";
-
-## 5) Rebuilding After Changes
+## 4) Rebuilding After Changes
 
 **Extension:**
 cd extension
