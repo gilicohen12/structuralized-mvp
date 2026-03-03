@@ -37,10 +37,3 @@ Turn on Developer Mode.
 Click Load unpacked and select:
 
 extension/dist
-
-## 4) Rebuilding After Changes
-
-**Extension:**
-cd extension
-
-npm run build
